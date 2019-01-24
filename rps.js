@@ -1,4 +1,5 @@
 let roundResultText = document.querySelector(".roundResult");
+let gameResultText = document.querySelector(".gameResult");
 let roundNumberText = document.querySelector(".roundNr");
 let playerChoice = document.querySelector(".playerChoice");
 let computerChoice = document.querySelector(".computerChoice");
@@ -15,9 +16,9 @@ let playerScore = 0;
 let computerScore = 0;
 
 btnNewGame.addEventListener('click', newGame);
-btnRock.addEventListener('click', game);
-btnPaper.addEventListener('click', game);
-btnScissors.addEventListener('click', game);
+btnRock.addEventListener('click', function (){game('rock')});
+btnPaper.addEventListener('click', function (){game('paper')});
+btnScissors.addEventListener('click', function (){game('scissors')});
 
 function computerPlay()
     {
@@ -71,10 +72,10 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
-function game(e)
+function game(playerSelection)
 {
     let computerSelection = computerPlay();
-    playerSelection = e.target.textContent.toLowerCase();
+    // playerSelection = e.target.textContent.toLowerCase();
 
     let roundResult = playRound(playerSelection, computerSelection)
 
@@ -102,15 +103,20 @@ function game(e)
 
         if(playerScore>computerScore && roundNr===6)
         {
-            roundResultText.textContent = 'Game ended. Result: You win!';
+            gameResultText.textContent = 'Game ended. Result: You win!';
+            gameResultText.style.cssText = 'color: green';
         }
         else if(playerScore===computerScore && roundNr===6)
         {
-            roundResultText.textContent = 'Game ended. Result: Draw.';
+            gameResultText.textContent = 'Game ended. Result: Draw.';
+            gameResultText.style.cssText = 'color: white';
+
         }
         else if (roundNr===6)
         {
-            roundResultText.textContent = 'Game ended. Result: You lost :(';
+            gameResultText.textContent = 'Game ended. Result: You lost :(';
+            gameResultText.style.cssText = 'color: red';
+
         }
     }
 }
@@ -129,5 +135,7 @@ function newGame()
     computerScoreText.textContent = 'Computer score: ';
     playerChoice.textContent = 'You choose: ';
     computerChoice.textContent = 'Computer choose: ';
-    roundResultText.textContent= '-';
+    roundResultText.textContent = '-';
+    gameResultText.textContent = '-'
+    gameResultText.style.cssText = 'color: black';
 }

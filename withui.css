@@ -1,0 +1,51 @@
+html {
+    background: linear-gradient(rgb(255, 255, 255), rgb(32, 32, 32));
+    background-size: cover;
+    height: 100%;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+img {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.results ,.buttons {
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.results {
+    width: 250px;
+    left: 53%
+}
+
+.buttons {
+    top: 45%;
+    left: 50%;
+}
+
+#rock, #paper, #scissors {
+    height: 100px;
+    width: 100px;
+}
+
+#newGame {
+    margin: 0;
+    position: absolute;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    bottom: -150px;
+    left: 50%;
+    height: 50px;
+    width: 160px;
+    border-radius: 10px;
+}
