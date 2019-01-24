@@ -34,11 +34,6 @@ img {
 }
 
 .buttons {
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
     top: 45%;
     left: 50%;
 }
@@ -50,11 +45,6 @@ img {
 #rock, #paper, #scissors {
     height: 100px;
     width: 100px;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 #newGame {
